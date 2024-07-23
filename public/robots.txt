@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://gyawunmusic.vercel.app/
+
+# Sitemaps
+Sitemap: https://gyawunmusic.vercel.app/sitemap.xml
