@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "./Hero";
 import Features from "./Features";
 import Stats from "./Stats";
+import Author from "./Author";
 
 export default async function Home() {
   const repo_response = await fetch(
@@ -41,6 +42,7 @@ export default async function Home() {
         <Hero />
         <Stats data={finalData} />
         <Features />
+        <Author />
       </main>
     </>
   );

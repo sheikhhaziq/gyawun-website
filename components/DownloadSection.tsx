@@ -36,12 +36,7 @@ function DownloadSection({ name, assets }: { name: String; assets: Asset[] }) {
         <div className="text-lg  font-semibold">
           Latest(<span className="text-sm">{name}</span>)
         </div>
-        <div>
-          {nFormatter(
-            assets.reduce((acc, asset) => acc + asset.download_count, 0)
-          )}{" "}
-          Downloads
-        </div>
+
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Button variant="outline">

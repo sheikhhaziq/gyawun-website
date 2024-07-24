@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/card";
 import Markdown from "react-markdown";
 import DownloadSection from "@/components/DownloadSection";
+import { nFormatter } from "@/lib/utils";
 
 async function Release({ params }: { params: { id: string } }) {
   const url: string = `https://api.github.com/repos/jhelumcorp/gyawun/releases/${params.id}`;
@@ -29,12 +30,16 @@ async function Release({ params }: { params: { id: string } }) {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              <Markdown>{releases_data.body}</Markdown>
-            </CardDescription>
-            <div className="flex flex-row text-sm mt-4">
-              Published at:{" "}
+              Release Date:{" "}
               {new Date(releases_data.published_at).toLocaleDateString()}
-            </div>
+              <br />
+              Downloads:{" "}
+              {nFormatter(
+                assets.reduce((acc, asset) => acc + asset.download_count, 0)
+              )}
+              <br />
+              Stable: {releases_data.prerelease ? "No" : "Yes"}
+            </CardDescription>
           </CardContent>
         </Card>
       </section>
