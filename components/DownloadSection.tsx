@@ -9,10 +9,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { nFormatter } from "@/lib/utils";
 
-import { ArrowRightIcon, ChevronsUpDown } from "lucide-react";
+import { ChevronsUpDown } from "lucide-react";
 import { useState } from "react";
-import Link from "next/link";
 import DownloadTable from "@/components/DownloadTable";
 const devices: Device[] = [
   {
@@ -35,6 +35,12 @@ function DownloadSection({ name, assets }: { name: String; assets: Asset[] }) {
       <div className="flex flex-row justify-between items-center">
         <div className="text-lg  font-semibold">
           Latest(<span className="text-sm">{name}</span>)
+        </div>
+        <div>
+          {nFormatter(
+            assets.reduce((acc, asset) => acc + asset.download_count, 0)
+          )}{" "}
+          Downloads
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger>

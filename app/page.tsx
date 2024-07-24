@@ -5,7 +5,10 @@ import Stats from "./Stats";
 
 export default async function Home() {
   const repo_response = await fetch(
-    "https://api.github.com/repos/jhelumcorp/gyawun"
+    "https://api.github.com/repos/jhelumcorp/gyawun",
+    {
+      next: { revalidate: 60 * 60 * 24 },
+    }
   );
   const repo_data = await repo_response.json();
   const stars_count: number = repo_data.stargazers_count;
@@ -14,7 +17,7 @@ export default async function Home() {
   const releases_response = await fetch(
     "https://api.github.com/repos/jhelumcorp/gyawun/releases",
     {
-      next: { revalidate: 10 },
+      next: { revalidate: 60 * 60 },
     }
   );
   const releases_data: Release[] = await releases_response.json();
