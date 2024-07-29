@@ -16,19 +16,16 @@ export default async function Home() {
   const forks_count: number = repo_data.forks_count;
   const open_issues: number = repo_data.open_issues;
   const releases_response = await fetch(
-    "https://api.github.com/repos/jhelumcorp/gyawun/releases",
+    "https://api.github.com/repos/jhelumcorp/gyawun/releases/latest",
     {
       next: { revalidate: 60 * 60 },
     }
   );
-  const releases_data: Release[] = await releases_response.json();
+  const releases_data: Release = await releases_response.json();
 
-  const download_count: number = releases_data[0].assets.reduce(
-    (acc, release) => {
-      return acc + release.download_count;
-    },
-    0
-  );
+  const download_count: number = releases_data.assets.reduce((acc, release) => {
+    return acc + release.download_count;
+  }, 0);
   const finalData: HomeScreenData = {
     download_count,
     stars_count,
