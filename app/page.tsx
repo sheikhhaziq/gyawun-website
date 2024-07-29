@@ -8,7 +8,7 @@ export default async function Home() {
   const repo_response = await fetch(
     "https://api.github.com/repos/jhelumcorp/gyawun",
     {
-      next: { revalidate: 60 * 60 * 24 },
+      next: { revalidate: 60 * 60 },
     }
   );
   const repo_data = await repo_response.json();
