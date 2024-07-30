@@ -3,6 +3,24 @@ import DownloadSection from "../../../components/DownloadSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRightIcon } from "lucide-react";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title:
+    "Download Gyawun Music - Seamless Music Streaming for Android and Windows",
+  description:
+    "Download Gyawun Music app for Android and Windows. Enjoy seamless music streaming with Google account integration. Available now on GitHub.",
+  keywords: [
+    "Gyawun Music",
+    "music streaming",
+    "Android music app",
+    "Windows music app",
+    "download music app",
+    "Google account integration",
+    "open source music app",
+    "GitHub music app",
+  ],
+  authors: [{ name: "Sheikh Haziq", url: "https://github.com/sheikhhaziq" }],
+};
 
 async function Download() {
   const releases_response: Response = await fetch(

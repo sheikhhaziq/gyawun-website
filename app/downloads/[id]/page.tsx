@@ -6,9 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Markdown from "react-markdown";
 import DownloadSection from "@/components/DownloadSection";
 import { nFormatter } from "@/lib/utils";
+import { Metadata } from "next";
+import Head from "next/head";
 
 async function Release({ params }: { params: { id: string } }) {
   const url: string = `https://api.github.com/repos/jhelumcorp/gyawun/releases/${params.id}`;
@@ -22,6 +23,18 @@ async function Release({ params }: { params: { id: string } }) {
   const assets: Asset[] = releases_data.assets;
   return (
     <>
+      <Head>
+        <title>{`Download Gyawun Music Version ${releases_data.name}`}</title>
+        <meta
+          name="description"
+          content={`Download version ${releases_data.tag_name} of Gyawun Music for Android or Windows. Enjoy seamless endless streaming.`}
+        />
+        <meta
+          name="keywords"
+          content={`download Gyawun Music version ${releases_data.name}, Gyawun Music, music streaming, Android music app, Windows music app, download music app, Google account integration, open source music app, GitHub music app`}
+        />
+        <meta name="author" content="Sheikh Haziq" />
+      </Head>
       <Header />
       <section className="container pt-24 flex justify-center">
         <Card>

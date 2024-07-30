@@ -24,8 +24,6 @@ export const metadata: Metadata = {
     "Uninterrupted music",
   ],
   authors: [{ name: "Sheikh Haziq", url: "https://github.com/sheikhhaziq" }],
-  creator: "Sheikh Haziq",
-  publisher: "Sheikh Haziq",
 };
 
 export default function RootLayout({
