@@ -39,7 +39,6 @@ export default async function Home() {
         <Hero />
         <Stats data={finalData} />
         <Features />
-        <Author />
       </main>
     </>
   );
