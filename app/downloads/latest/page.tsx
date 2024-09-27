@@ -24,7 +24,10 @@ export const metadata: Metadata = {
 
 async function Download() {
   const releases_response: Response = await fetch(
-    "https://api.github.com/repos/jhelumcorp/gyawun/releases"
+    "https://api.github.com/repos/jhelumcorp/gyawun/releases",
+    {
+      next: { revalidate: 60 * 60 },
+    }
   );
   const releases_data: Release[] = await releases_response.json();
   const latest_release: Release = releases_data.filter(
