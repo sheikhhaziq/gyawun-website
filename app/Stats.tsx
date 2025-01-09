@@ -7,8 +7,28 @@ import {
 } from "lucide-react";
 import React from "react";
 import { nFormatter } from "@/lib/utils";
+import path from 'path';
+import fs from 'fs';
 
-function Stats({ data }: { data: HomeScreenData }) {
+
+function getDownloadCount(): number | null {
+  try {
+    const filePath = path.join(process.cwd(), 'downloads.json');
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const data = JSON.parse(fileContents) as Record<string, { download?: number; update?: number }>;
+    const totalDownloadCount = Object.values(data).reduce((sum, platform) => {
+      return sum + (platform.download || 0);
+    }, 0);
+    return totalDownloadCount;
+  } catch (e) {
+    return null;
+  }
+}
+async function Stats({ data }: { data: HomeScreenData }) {
+  // const count: number | null = getDownloadCount();
   return (
     <div className="container">
       <h2 className="text-2xl font-bold mt-4 mb-2">Github Stats</h2>

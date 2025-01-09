@@ -21,8 +21,18 @@ function formatBytes(bytes: number, decimals = 1) {
 
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 }
+const redirectToDownload = (platform: string, type: string | null, downloadUrl: string) => {
+  const apiUrl = new URL('/api/download', 'https://gyawunmusic.vercel.app/');
+  apiUrl.searchParams.append('url', downloadUrl);
+  apiUrl.searchParams.append('platform', platform);
+  apiUrl.searchParams.append('type', type ?? 'download');
 
-function DownloadTable({ assets }: { assets: Asset[] }) {
+  // Redirect the user to the API endpoint
+  window.location.href = apiUrl.toString();
+};
+
+
+function DownloadTable({ assets, platform }: { assets: Asset[], platform: string }) {
   return (
     <Table>
       <TableHeader>
@@ -46,15 +56,11 @@ function DownloadTable({ assets }: { assets: Asset[] }) {
               </TableCell>
             )}
             <TableCell className="text-center">
-              <a
-                href={asset.browser_download_url}
-                title={asset.name}
-                download={asset.name}
-              >
-                <Button variant="link">
-                  <DownloadIcon />
-                </Button>
-              </a>
+
+              <Button onClick={() => redirectToDownload(platform, null, asset.browser_download_url)} variant="link">
+                <DownloadIcon />
+              </Button>
+
             </TableCell>
           </TableRow>
         ))}

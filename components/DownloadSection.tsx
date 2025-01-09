@@ -61,6 +61,7 @@ function DownloadSection({ name, assets }: { name: String; assets: Asset[] }) {
       </div>
       <DownloadTable
         assets={assets.filter((asset) => asset.content_type == value.type)}
+        platform={value.name}
       />
     </section>
   );

@@ -24,9 +24,8 @@ export default function Header() {
   }, [top]);
   return (
     <header
-      className={`fixed ${
-        !top && `shadow-md shadow-red-800`
-      } w-full bg-gradient-to-r from-[#f4274d] to-[#ff0000]`}
+      className={`fixed ${!top && `shadow-md shadow-red-800`
+        } w-full bg-gradient-to-r from-[#f4274d] to-[#ff0000]`}
     >
       <nav
         aria-label="Global"
@@ -48,6 +47,12 @@ export default function Header() {
             >
               Releases
             </Link>
+            <a
+              href="https://github.com/jhelumcorp/gyawun.git"
+              className="text-sm font-semibold leading-6 text-slate-200 hover:text-white"
+            >
+              Github
+            </a>
             {/* <Link
               href="#"
               className="text-sm font-semibold leading-6 text-slate-200 hover:text-white"
