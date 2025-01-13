@@ -25,7 +25,7 @@ const redirectToDownload = (platform: string, type: string | null, downloadUrl: 
   const apiUrl = new URL('/api/download', 'https://gyawunmusic.vercel.app/');
   apiUrl.searchParams.append('url', downloadUrl);
   apiUrl.searchParams.append('platform', platform);
-  apiUrl.searchParams.append('type', type ?? 'download');
+  apiUrl.searchParams.append('action', type ?? 'download');
 
   // Redirect the user to the API endpoint
   window.location.href = apiUrl.toString();
