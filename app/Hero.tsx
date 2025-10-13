@@ -1,6 +1,6 @@
 import { DownloadCloudIcon } from "lucide-react";
 import Image from "next/image";
-import phone from "/images/phone.png";
+import phone from "@/public/images/phone.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -29,7 +29,16 @@ function Hero() {
           </div>
         </div>
         <div className="flex-1  hidden md:flex justify-center">
-          <Image src={phone} width={341} height={600} alt="hero" />
+          <Image
+            src={phone}
+            alt="Gyawun Music App"
+            priority // Add this for LCP image
+            className="your-custom-classes"
+            // Remove any width/height props if you're using CSS for sizing
+            // Or specify both width and height if needed
+            width={500} // Adjust as needed
+            height={500} // Adjust as needed
+          />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
-import developer from "/images/developer.jpg";
+import developer from "@/public/images/developer.jpg";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 function Author() {
@@ -19,7 +19,7 @@ function Author() {
             alt="Sheikh Haziq"
             height={196}
             width={196}
-            className="rounded-full"
+           className="w-64 h-auto"
           />
           <AvatarFallback>Sheikh Haziq</AvatarFallback>
         </Avatar>
