@@ -40,8 +40,8 @@ export default function Header() {
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-gray-700"
-            : "bg-gradient-to-r from-[#f4274d] to-[#ff0000]"
+            ? "bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-200 dark:border-gray-800"
+            : "bg-gradient-to-r from-[#f4274d] to-[#ff0000] dark:bg-gradient-to-r dark:from-gray-900 dark:to-black"
         }`}
       >
         <nav
@@ -65,7 +65,7 @@ export default function Header() {
               </div>
               <h1
                 className={`text-xl font-bold tracking-tight ${
-                  scrolled ? "text-gray-900 dark:text-white" : "text-white"
+                  scrolled ? "text-gray-900 dark:text-white" : "text-white dark:text-white"
                 }`}
               >
                 Gyawun Music
@@ -79,10 +79,10 @@ export default function Header() {
             <div className="hidden md:flex md:gap-x-6 lg:gap-x-8 items-center">
               <Link
                 href="/downloads"
-                className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-[#f4274d] dark:hover:text-red-400 ${
+                className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gray-700 dark:hover:text-gray-200 ${
                   scrolled
                     ? "text-gray-700 dark:text-gray-300"
-                    : "text-red-100 hover:text-white"
+                    : "text-red-100 hover:text-white dark:text-gray-300 dark:hover:text-white"
                 }`}
               >
                 <Download size={16} />
@@ -92,10 +92,10 @@ export default function Header() {
                 href="https://github.com/jhelumcorp/gyawun.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-[#f4274d] dark:hover:text-red-400 ${
+                className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-gray-700 dark:hover:text-gray-200 ${
                   scrolled
                     ? "text-gray-700 dark:text-gray-300"
-                    : "text-red-100 hover:text-white"
+                    : "text-red-100 hover:text-white dark:text-gray-300 dark:hover:text-white"
                 }`}
               >
                 <Github size={16} />
@@ -109,10 +109,10 @@ export default function Header() {
               className={`relative w-16 h-8 rounded-full transition-all duration-300 flex items-center ${
                 scrolled
                   ? darkMode
-                    ? "bg-red-600"
+                    ? "bg-gray-700"
                     : "bg-gray-300"
                   : darkMode
-                  ? "bg-red-400"
+                  ? "bg-gray-600"
                   : "bg-white/30"
               }`}
               aria-label="Toggle theme"
@@ -137,7 +137,7 @@ export default function Header() {
                 className={`p-2 rounded-lg transition-colors ${
                   scrolled
                     ? "hover:bg-gray-100 dark:hover:bg-gray-800"
-                    : "hover:bg-white/20"
+                    : "hover:bg-white/20 dark:hover:bg-gray-700/30"
                 }`}
                 aria-label="Open menu"
               >
@@ -145,7 +145,7 @@ export default function Header() {
                   className={
                     scrolled
                       ? "text-gray-700 dark:text-gray-300"
-                      : "text-white"
+                      : "text-white dark:text-white"
                   }
                   size={24}
                 />
@@ -166,13 +166,13 @@ export default function Header() {
       >
         {/* Mobile Menu Panel - Slides from left and covers half screen */}
         <div
-          className={`fixed left-0 top-0 h-full w-1/2 max-w-sm bg-white dark:bg-gray-900 shadow-xl transition-transform duration-300 ease-in-out ${
+          className={`fixed left-0 top-0 h-full w-1/2 max-w-sm bg-white dark:bg-black shadow-xl transition-transform duration-300 ease-in-out ${
             mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Menu Header with Logo and Brand Name */}
-          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+          <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
             <Link
               href="/"
               className="flex items-center space-x-2 transition-transform hover:scale-105"
@@ -224,14 +224,14 @@ export default function Header() {
 
           {/* Theme Toggle in Mobile Menu */}
           <div className="absolute bottom-6 left-0 right-0 px-4">
-            <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+            <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 Theme
               </span>
               <button
                 onClick={toggleTheme}
                 className={`relative w-14 h-7 rounded-full transition-all duration-300 flex items-center ${
-                  darkMode ? "bg-red-600" : "bg-gray-300"
+                  darkMode ? "bg-gray-700" : "bg-gray-300"
                 }`}
                 aria-label="Toggle theme"
               >

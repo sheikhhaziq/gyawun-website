@@ -31,11 +31,12 @@ export default async function Home() {
     forks_count,
     open_issues,
   };
+
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <Hero statsData={finalData} />
         <Stats data={finalData} />
         <Features />
       </main>
