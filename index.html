@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyawun Music - YouTube Music Client</title>
+
+    <!-- Google Fonts: Roboto Flex for Material Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="reveal-on-scroll">
+            <a href="#" class="logo">
+                <span class="material-symbols-rounded">equalizer</span>
+                Gyawun Music
+            </a>
+            <!-- Simple Nav / Action -->
+            <a href="#download" class="btn btn-tonal" style="height: 40px; font-size: 0.9rem; padding: 0 20px;">
+                Get App
+            </a>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-text reveal-on-scroll delay-100">
+                <h1>The ultimate<br>YouTube Music client.</h1>
+                <p>Stream seamlessly from YouTube Music in one unified, beautiful Material 3 interface without ads or
+                    interruptions.</p>
+
+                <div class="btn-group">
+                    <a href="#download" class="btn btn-primary">
+                        <span class="material-symbols-rounded">download</span>
+                        Download APK
+                    </a>
+                    <a href="https://github.com/sheikhhaziq/gyawun_music" target="_blank" class="btn btn-tonal">
+                        <span class="material-symbols-rounded">code</span>
+                        View Source
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal-on-scroll delay-200">
+                <div class="visual-circle"></div>
+                <div class="visual-circle-2"></div>
+
+                <!-- Abstract Representation of the App UI -->
+                <div class="mock-app-ui">
+                    <!-- Top Bar -->
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
+                        <div class="mock-line w-40"></div>
+                        <div
+                            style="width: 32px; height: 32px; background: var(--md-sys-color-surface-variant); border-radius: 50%;">
+                        </div>
+                    </div>
+
+                    <!-- Content Row 1 -->
+                    <div class="mock-row">
+                        <div class="mock-cover"></div>
+                        <div class="mock-lines">
+                            <div class="mock-line w-60"></div>
+                            <div class="mock-line w-40" style="opacity: 0.5;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row 2 -->
+                    <div class="mock-row">
+                        <div class="mock-cover"
+                            style="background: linear-gradient(45deg, var(--md-sys-color-primary), #B39DDB);"></div>
+                        <div class="mock-lines">
+                            <div class="mock-line w-80"></div>
+                            <div class="mock-line w-60" style="opacity: 0.5;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Player Bar -->
+                    <div class="mock-player-bar">
+                        <div
+                            style="width: 32px; height: 32px; background: var(--md-sys-color-primary); border-radius: 8px;">
+                        </div>
+                        <div class="mock-line w-40"></div>
+                        <div style="margin-left: auto; display: flex; gap: 8px;">
+                            <span class="material-symbols-rounded"
+                                style="font-size: 20px; opacity: 0.7;">skip_previous</span>
+                            <span class="material-symbols-rounded" style="font-size: 20px;">play_arrow</span>
+                            <span class="material-symbols-rounded"
+                                style="font-size: 20px; opacity: 0.7;">skip_next</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="features">
+            <div class="section-header reveal-on-scroll">
+                <h2>Designed for Audio</h2>
+            </div>
+
+            <div class="grid">
+                <!-- Card 1: Main Provider (Span 12 for Emphasis) -->
+                <div class="card col-span-12 highlight reveal-on-scroll delay-100">
+                    <div class="icon-box">
+                        <span class="material-symbols-rounded">library_music</span>
+                    </div>
+                    <div>
+                        <h3>Powered by YouTube Music</h3>
+                        <p>Gyawun sources high-quality audio directly from <strong>YouTube Music</strong>. Access the
+                            world's largest music library, remixes, and covers in a distraction-free interface.</p>
+                    </div>
+                    <!-- Decorative background icon -->
+                    <span class="material-symbols-rounded"
+                        style="position: absolute; right: -20px; bottom: -40px; font-size: 200px; opacity: 0.05; pointer-events: none;">library_music</span>
+                </div>
+
+                <!-- Card 2: Playlist Manager -->
+                <div class="card col-span-6 reveal-on-scroll delay-200">
+                    <div class="icon-box">
+                        <span class="material-symbols-rounded">queue_music</span>
+                    </div>
+                    <div>
+                        <h3>Unified Playlists</h3>
+                        <p>Powered by our custom <strong>PlaylistManager</strong>. Import your lists or create new ones
+                            mixing local files with YT streams effortlessly.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Performance -->
+                <div class="card col-span-6 tertiary reveal-on-scroll delay-300">
+                    <div class="icon-box">
+                        <span class="material-symbols-rounded">speed</span>
+                    </div>
+                    <div>
+                        <h3>Blazing Fast Flutter</h3>
+                        <p>Engineered with Dart and Flutter for 60fps animations and rapid data fetching on any Android
+                            device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="stats-section">
+            <div class="section-header reveal-on-scroll">
+                <h2>Community Driven</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card reveal-on-scroll delay-100">
+                    <span class="material-symbols-rounded"
+                        style="font-size: 40px; margin-bottom: 16px; color: var(--md-sys-color-tertiary);">download</span>
+                    <div id="stat-downloads" class="stat-number stat-loading">...</div>
+                    <div class="stat-label">Most Downloaded Release</div>
+                    <div style="font-size: 0.8rem; opacity: 0.6; margin-top: 4px;">(Single Stable Version)</div>
+                </div>
+                <div class="stat-card reveal-on-scroll delay-200">
+                    <span class="material-symbols-rounded"
+                        style="font-size: 40px; margin-bottom: 16px; color: var(--md-sys-color-tertiary);">star</span>
+                    <div id="stat-stars" class="stat-number stat-loading">...</div>
+                    <div class="stat-label">GitHub Stars</div>
+                </div>
+                <div class="stat-card reveal-on-scroll delay-300">
+                    <div class="stat-label"
+                        style="margin-bottom: 12px; color: var(--md-sys-color-on-surface-variant); opacity: 0.8; font-size: 0.9rem;">
+                        TOP CONTRIBUTORS</div>
+
+                    <div id="stat-contributors-list" class="contributors-wrapper">
+                        <!-- Fallback icon while loading -->
+                        <span class="material-symbols-rounded stat-loading"
+                            style="font-size: 48px; color: var(--md-sys-color-tertiary);">group</span>
+                    </div>
+
+                    <div id="stat-contributors-count" class="stat-label">Contributors</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOWNLOAD SECTION -->
+        <section id="download" class="download-section reveal-on-scroll">
+            <span class="material-symbols-rounded" style="font-size: 48px; margin-bottom: 24px;">android</span>
+            <h2>Ready to tune in?</h2>
+            <p style="max-width: 600px; margin: 0 auto; opacity: 0.9; font-size: 1.25rem;">
+                Gyawun Music is open source and free. Choose your preferred version below.
+            </p>
+
+            <div class="platforms">
+                <a href="https://github.com/sheikhhaziq/gyawun_music/releases/latest" target="_blank"
+                    class="platform-chip" id="download-stable">
+                    <span class="material-symbols-rounded">download</span>
+                    <span>Download Stable</span>
+                </a>
+
+                <a href="https://github.com/sheikhhaziq/gyawun_music/releases" target="_blank"
+                    class="platform-chip beta">
+                    <span class="material-symbols-rounded">science</span>
+                    <span>Try Beta</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <div>
+                &copy; 2025 Gyawun Music. Built with Flutter.
+            </div>
+            <div style="display: flex; gap: 24px;">
+                <a href="https://github.com/sheikhhaziq/gyawun_music" target="_blank"
+                    style="color: inherit; text-decoration: none;">GitHub</a>
+                <a href="#" style="color: inherit; text-decoration: none;">Privacy</a>
+                <a href="#" style="color: inherit; text-decoration: none;">Terms</a>
+            </div>
+        </footer>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
